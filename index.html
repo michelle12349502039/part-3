@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+</head>
+    
+<body>
+    <div id="spotlight">
+        <div id="spotlight-overlay"></div>
+        <div class="container">
+            <h1>ew... something stinks in here</h1>
+            <img src="SEFDS0NMVUJET1RDT01TTEFTSEdSQVlTQ0FMRVJFRFBBTkRBUw==.png" alt="super super super super adorable raccoon">
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const spotlightOverlay = document.getElementById('spotlight-overlay');
+
+            document.addEventListener('mousemove', function (event) {
+                const spotlight = document.getElementById('spotlight');
+                const rect = spotlight.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                spotlightOverlay.style.background = `radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(132, 146, 166, 0) 20px,
+                    rgba(250, 239, 214, 0.9) 120px
+                )`;
+            });
+        });
+    </script>
+</body>
+</html>
